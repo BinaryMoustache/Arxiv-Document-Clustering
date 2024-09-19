@@ -64,18 +64,18 @@ Here’s a breakdown of the configuration file you’ll need to provide in the c
     "min_cluster_size": [5, 40],
     "n_components": [3, 12]
   },
-  "n_iter": 100
+  "n_iter": 50
 }
 ````
 
 - ````model_name````:
-The pre-trained BERT model from Hugging Face to use for topic extraction. You can specify a model like "all-MiniLM-L6-v2". If left as null, the script may use a default model.
+The pre-trained BERT model from Hugging Face to use for topic extraction. You can specify a model like "all-MiniLM-L6-v2". If left as null, the script will use a default model("thenlper/gte-base").
 - ````param_grid````: A dictionary that specifies the parameter ranges for UMAP and HDBSCAN. These ranges will be explored during Bayesian optimization to identify the optimal configuration:
     - ````n_components````: UMAP parameter for the number of dimensions to reduce the data to.
     - ````n_neighbors````: UMAP parameter for controlling the number of neighbors to consider for each point.
     - ````min_cluster_size````: HDBSCAN parameter for setting the minimum number of samples required to form a cluster.
 
-- ````n_iter````: The number of iterations for the Bayesian optimization process, which will search for the best combination of parameters in param_grid. The script will run 100 iterations in this case.
+- ````n_iter````: The number of iterations for the Bayesian optimization process, which will search for the best combination of parameters in param_grid. The script will run 50 iterations in this case.
 
 
 
